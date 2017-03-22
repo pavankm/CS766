@@ -1,4 +1,4 @@
-function [cropped_mask,cropped_img] = pre_process(img)
+function [cropped_mask,cropped_img] = crop_image(img)
     level = graythresh(img);
     binary_img = im2bw(img,level);
     binary_img  = imdilate(binary_img,strel('square',3));

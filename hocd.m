@@ -1,7 +1,7 @@
 function hist = hocd(img)
 
     % todo: move this to a common place?
-    [cropped_mask,~] = pre_process(img);
+    [cropped_mask,~] = crop_image(img);
     edge_map = bwperim(cropped_mask);
     a = regionprops(img,'Centroid');
     centroid = a.Centroid;
