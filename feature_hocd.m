@@ -1,4 +1,4 @@
-function hist = hocd(img)
+function hist = feature_hocd(img)
 
     % todo: move this to a common place?
     [cropped_mask,~] = crop_image(img);
