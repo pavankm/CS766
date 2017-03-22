@@ -1,0 +1,15 @@
+function histogram = hocd(img)
+
+    % todo: move this to a common place?
+    [cropped_mask,cropped_img] = pre_process(img);
+    edge_map = bwperim(cropped_mask);
+    a = regionprops(img,'Centroid');
+    centroid = a.Centroid;
+    
+    distances = distance_edge_to_centroid(edge_map,centroid);
+    
+    [counts,~] = hist(distances,50);
+counts = counts/norm(distances);
+%figure; bar(centers,counts);
+
+end
